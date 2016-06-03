@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.4'
+gem 'rails', '4.0.6'
 gem 'therubyracer', '~> 0.12.1'
 gem 'less-rails'
 gem 'jquery-rails'
@@ -22,7 +22,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 
 gem 'puma'
-gem 'mysql2', group: [:production, :test]
+#gem 'mysql2', group: [:production, :test]
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.14'

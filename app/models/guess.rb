@@ -11,7 +11,7 @@ class Guess < ActiveRecord::Base
   belongs_to :user
   belongs_to :match
 
-  scope :finished, -> { joins(:match).where("matches.datetime < ?", Time.now) }
+  scope :finished, -> { joins(:match).where("matches.datetime < ?", Time.now + 60) }
 
   def score
     return 0 if !match.finished?
