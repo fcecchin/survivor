@@ -1,6 +1,20 @@
-rake db:drop --> excluir o banco de dados
-rake db:schema:load --> criar o banco a partir do esquema
-rake db:seed —> carregar o banco
-bundle exec rake db:schema:dump --> criar schema.db
+tchesco@taurus:~/Nitrous/survivor$ bundle exec rake -T db
+rake db:create              # Create the database from DATABASE_URL or config/database.yml for the current Rails.env (use db:create:all to create all dbs in the config)
+rake db:drop                # Drops the database using DATABASE_URL or the current Rails.env (use db:drop:all to drop all databases)
+rake db:fixtures:load       # Load fixtures into the current environment's database
+rake db:migrate             # Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)
+rake db:migrate:status      # Display status of migrations
+rake db:rollback            # Rolls the schema back to the previous version (specify steps w/ STEP=n)
+rake db:schema:cache:clear  # Clear a db/schema_cache.dump file
+rake db:schema:cache:dump   # Create a db/schema_cache.dump file
+rake db:schema:dump         # Create a db/schema.rb file that can be portably used against any DB supported by AR
+rake db:schema:load         # Load a schema.rb file into the database
+rake db:seed                # Load the seed data from db/seeds.rb
+rake db:setup               # Create the database, load the schema, and initialize with the seed data (use db:reset to also drop the db first)
+rake db:structure:dump      # Dump the database structure to db/structure.sql
+rake db:version             # Retrieves the current schema version number
+rake test:all:db            # Run tests quickly, but also reset db
+
+bundle exec rake -T 	      # all tasks
 
 rails generate scaffold Tournament name:string user:references description:text --no-helper --no-assets --no-rspec --no-decorator --no-jbuilder --no-view-specs --no-request-specs --no-routing-specs -p

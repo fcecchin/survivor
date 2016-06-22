@@ -33,6 +33,11 @@ group :assets do
 	gem 'coffee-rails'
 end
 
+group :production do 
+	gem 'pg'
+	gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.4.2'
   gem 'factory_girl_rails'
