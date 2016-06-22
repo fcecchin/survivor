@@ -3,9 +3,12 @@
   activerecord:
     models:
       user: 'Usuários'
-      group: 'Grupos'
+      tournament: 'Campeonatos'
+      contest: 'Bolões'
+      participant: 'Participantes'
       match: 'Jogos'
       team: 'Times'
+      guess: 'Apostas'
     attributes:
       user:
         name: 'Nome'  
@@ -21,16 +24,16 @@
   closed: "Fechado"
   today_matches: "Jogos de Hoje"
   no_matches_today: "Não há jogos hoje"
-  my_guesses: "Meus Palpites"
+  my_guesses: "Minhas apostas"
   history: "Histórico"
   rules: "Regras"
-  app_title: "Bolão Calçada"
-  page_title: "Bolão Calçada"
-  take_a_guess: "Dar Palpite"
+  app_title: "Bolão Survivor"
+  page_title: "Bolão Survivor"
+  take_a_guess: "Apostar"
   logout: "Sair"
   ranking: "Classificação"
-  guesses: "Palpites"
-  guess: "Palpite"
+  guesses: "Apostas"
+  guess: "Aposta"
   details: "Detalhes"
   no_history: "Nenhum palpite para jogos finalizados para exibir no momento"
   match: "Jogo"
@@ -39,10 +42,10 @@
 
   # guesses
   guesses_page:
-    save_guesses: "Salvar Palpites"
-    future_matches: "Jogos Futuros"
-    last_minutes: "Jogo Hoje! Últimos momentos para palpitar."
-    guesses_saved: "Palpites Salvos!"
+    save_guesses: "Salvar apostas"
+    future_matches: "Jogos futuros"
+    last_minutes: "Jogo hoje! Últimos momentos para apostar."
+    guesses_saved: "Apostas salvas!"
 
   # history
   history_page:

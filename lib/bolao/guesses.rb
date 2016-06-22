@@ -2,7 +2,7 @@ module Bolao
   module Guesses
 
     # Saves the user guesses
-    def self.save(params, user)
+    def self.save(params, participant)
    
       params[:guesses].each do |g|
         match = Match.find(g[:match_id]).decorate
@@ -13,10 +13,11 @@ module Bolao
 
         if g[:id].empty?
           # Create a new guess if it doesn't exist yet
-          Guess.create(match_id: g[:match_id], goals_a: g[:goals_a], goals_b: g[:goals_b], user: user)
+          p 'teste'
+          Guess.create(match_id: g[:match_id], goals_a: g[:goals_a], goals_b: g[:goals_b], participant: g[:participant])
         else
           # Update current guess
-          guess = Guess.find_by_id_and_user_id(g[:id], user.id)
+          guess = Guess.find_by_id_and_participant_id(g[:id], g[:participant].id)
           guess.update_attributes(goals_a: g[:goals_a], goals_b: g[:goals_b])
         end
       end

@@ -4,7 +4,7 @@ FactoryGirl.define do
     datetime Time.now
     team_a
     team_b
-    group
+    tournament
 
     factory :future_match do
       datetime Time.now + 2.week.to_i

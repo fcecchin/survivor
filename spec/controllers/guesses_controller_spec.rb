@@ -14,7 +14,7 @@ describe GuessesController do
       create(:guess, match: create(:match), user: @user_session)
       create(:guess, match: create(:match), user: @user_session)
 
-      my_matches_and_guesses_grouped = Match.open_to_guesses.decorate(context: {user: @user_session}).group_by(&:group)
+      my_matches_and_guesses_grouped = Match.open_to_guesses.decorate(context: {user: @user_session}).group_by(&:tournament)
 
       get :my_guesses
       assigns(:grouped_matches).should eq(my_matches_and_guesses_grouped)

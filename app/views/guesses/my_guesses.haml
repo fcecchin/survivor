@@ -5,9 +5,9 @@
   = form_tag my_guesses_form_path do
     = render 'submit_right'
     %table.table
-      - @grouped_matches.each do |group, matches|
+      - @grouped_matches.each do |tournament, matches|
         %thead
-          %th{colspan: 42}= group.name
+          %th{colspan: 42}= tournament.name
         - matches.each do |match|
           = hidden_field_tag "guesses[][id]", match.my_guess.try(:id)
           = hidden_field_tag "guesses[][match_id]", match.id

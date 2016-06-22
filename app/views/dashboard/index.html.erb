@@ -1,0 +1,30 @@
+<h1>My contests</h1>
+<div class="row">
+  <% @contests.each do |c| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag(c.tournament.image, class: "img-responsive") %>
+      <div class="caption center">
+        <h3><%= c.name %></h3>
+        <p> <%= c.tournament %></p>
+        <p class="center"><%= link_to 'Acessar', contest_path(c), :class => "btn btn-primary" %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<h1>Available tournaments</h1>
+<div class="row">
+  <% @tournaments.each do |t| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag(t.image, class: "img-responsive") %>
+      <div class="caption center">
+        <h3><%= t.name %></h3>
+        <p class="center"><%= link_to 'Criar bolão', new_contest_path(t), :class => "btn btn-success" %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

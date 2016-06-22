@@ -24,19 +24,19 @@ describe Match do
       match.should_not be_valid
     end
 
-    it 'should belong to a group' do
-      match.group = nil
+    it 'should belong to a tournament' do
+      match.tournament = nil
       match.should_not be_valid
     end
 
   end
 
   context 'scopes' do
-    it 'should list matchs from active groups' do
-      group_a = create(:group)
-      group_b = create(:group, active: false)
-      create(:match, group: group_a)
-      match_b = create(:match, group: group_b)
+    it 'should list matchs from active tournaments' do
+      group_a = create(:tournament)
+      group_b = create(:tournament, active: false)
+      create(:match, tournament: group_a)
+      match_b = create(:match, tournament: group_b)
       Match.active.should_not include(match_b)
     end
 
@@ -47,18 +47,18 @@ describe Match do
       Match.open_to_guesses.should_not include(match_past)
     end
 
-    it 'should list matches ordered by group name' do
-      m1 = create(:future_match, group: create(:group, name: 'E'))
-      m2 = create(:future_match, group: create(:group, name: 'C'))
-      m3 = create(:future_match, group: create(:group, name: 'B'))
-      m4 = create(:future_match, group: create(:group, name: 'A'))
+    it 'should list matches ordered by tournament name' do
+      m1 = create(:future_match, tournament: create(:tournament, name: 'E'))
+      m2 = create(:future_match, tournament: create(:tournament, name: 'C'))
+      m3 = create(:future_match, tournament: create(:tournament, name: 'B'))
+      m4 = create(:future_match, tournament: create(:tournament, name: 'A'))
 
       matches = Match.where(id: [m1, m2, m3, m4]).group_ordered
       
-      matches[0].group.name.should == 'A'
-      matches[1].group.name.should == 'B'
-      matches[2].group.name.should == 'C'
-      matches[3].group.name.should == 'E'
+      matches[0].tournament.name.should == 'A'
+      matches[1].tournament.name.should == 'B'
+      matches[2].tournament.name.should == 'C'
+      matches[3].tournament.name.should == 'E'
     end
 
     it 'should list matches for today' do

@@ -31,7 +31,7 @@
 
         // full details for other devices
         %td.hidden-xs.col-md-2.center
-          %a.tooltip-img{href: match_details_path(guess.match), "data-toggle" => "tooltip", "data-placement" => "right", title: guess.match.group.name}= "#{guess.match.data_hora}"
+          %a.tooltip-img{href: match_details_path(guess.match), "data-toggle" => "tooltip", "data-placement" => "right", title: guess.match.tournament.name}= "#{guess.match.data_hora}"
         %td.right.hidden-xs= guess.match.team_a.name      
         %td.center.hidden-xs
           %img.img-circle.tooltip-img{src: guess.match.team_a.flag, width: 20, "data-toggle" => "tooltip", "data-placement" => "top", title: guess.match.team_a.name}

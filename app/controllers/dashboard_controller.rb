@@ -1,12 +1,8 @@
 class DashboardController < ApplicationController
 
   def index
-    @grouped_matches = Match.
-                          active.
-                          group_ordered.
-                          order("datetime ASC").                          
-                          decorate(context: {user: current_user}).
-                          group_by(&:group)
+    @contests = Contest.actives.played_by(current_user)
+    @tournaments = Tournament.where("active = ?", true).order("name ASC")
   end
 
 end

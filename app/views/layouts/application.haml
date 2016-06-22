@@ -37,7 +37,7 @@
             %strong= t("app_title")
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
-            %li= link_to t("my_guesses"), my_guesses_path
+            %li= link_to t("contests"), contests_path
             %li= link_to t("history"), my_history_path
             %li= link_to t("rules"), rules_path
           %ul.nav.navbar-nav.navbar-right
@@ -65,29 +65,29 @@
           = bootstrap_flash
           = yield
         .col-lg-3
-          .box-rounded
-            %h4
-              %span.glyphicon.glyphicon-fire
-              = t("ranking")
-            %table.table
-              - @users.each_with_index do |user, index|
-                %tr{class: ("hide hidden_rank" if index > 3)}
-                  %td
-                    .row
-                      .col-xs-1.col-md-2
-                        %h4= user.position
-                      .col-xs-3.col-md-3
-                        %a{href: user_profile_path(user)} 
-                          %img.img-circle{src: user.profile_image, width: 50}
-                      .col-xs-7.col-md-6
-                        %a{href: user_profile_path(user)}
-                          %strong=user.name
-                        %br{clear: "all"}
-                        %span.label.label-default= pluralize(user.score, t("point").camelize)
+          / .box-rounded
+          /   %h4
+          /     %span.glyphicon.glyphicon-fire
+          /     = t("ranking")
+          /   %table.table
+          /     - @users.each_with_index do |user, index|
+          /       %tr{class: ("hide hidden_rank" if index > 3)}
+          /         %td
+          /           .row
+          /             .col-xs-1.col-md-2
+          /               %h4= user.position
+          /             .col-xs-3.col-md-3
+          /               %a{href: user_profile_path(user)} 
+          /                 %img.img-circle{src: user.profile_image, width: 50}
+          /             .col-xs-7.col-md-6
+          /               %a{href: user_profile_path(user)}
+          /                 %strong=user.name
+          /               %br{clear: "all"}
+          /               %span.label.label-default= pluralize(user.score, t("point").camelize)
 
-            - if @users.size > 4
-              %button.btn.expand_rank.btn-primary{type: "button"}
-                %span#expand.glyphicon.glyphicon-chevron-down
+          /   - if @users.size > 4
+          /     %button.btn.expand_rank.btn-primary{type: "button"}
+          /       %span#expand.glyphicon.glyphicon-chevron-down
 
           .box-rounded
             %h4
@@ -113,7 +113,10 @@
                       %td.center
                         %img.img-circle.tooltip-img{src: match.team_b.flag, width: 30, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_b.name}
               %a.btn.btn-default{href: my_guesses_path}= t("take_a_guess")
+      .row
+      - if Rails.env.development?
+        .container
+        =debug(params)
       %footer
         %p= "&copy; ".html_safe + t("app_title")
-
     = javascript_include_tag "application"

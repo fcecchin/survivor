@@ -1,8 +1,14 @@
 Bolao::Application.routes.draw do
+  root to: 'dashboard#index'
+  
   # Admin
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  
+  resources :contests, path_names: { new: 'new/:id' }
+
+  resources :matches
   
   get  '/palpites', to: 'guesses#my_guesses', as: :my_guesses
   post '/palpites', to: 'guesses#update',     as: :my_guesses_form
@@ -13,6 +19,4 @@ Bolao::Application.routes.draw do
   get  '/jogo/:id',       to: 'matches#show',       as: :match_details
 
   get  '/regras', to: 'rules#index', as: :rules
-
-  root to: 'dashboard#index'
 end

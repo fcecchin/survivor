@@ -16,6 +16,7 @@
 //= require jasny-bootstrap.min
 //= require turbolinks
 //= require_tree .
+//= require cocoon
 
 $('.tooltip-img').tooltip();
 

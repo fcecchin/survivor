@@ -1,0 +1,6 @@
+.nested-fields.project-tag-fields
+  #tag_from_list
+    = f.association :user, :collection => User.all(:order => 'name'), :prompt => 'Choose an existing user'
+    = f.input :active
+    = link_to_remove_association "remove participant", f
+  	

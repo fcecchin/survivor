@@ -1,0 +1,16 @@
+<h1>Listing contests</h1>
+
+<div class="row">
+  <% @contests.each do |c| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="http://1.bp.blogspot.com/-qcBRvW9eoJ8/VS1NV6efLSI/AAAAAAAAMtQ/gAG3jiQ0zJY/s1600/logobrasileirao2.png" alt="..." height="100px">
+      <div class="caption">
+        <h3><%= c.name %></h3>
+        <p> <%= c.tournament %></p>
+        <p class="center"><%= link_to 'Acessar', contest_path(c), :class => "btn btn-primary" %></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

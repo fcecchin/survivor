@@ -49,7 +49,7 @@ RailsAdmin.config do |config|
   end
 
   # Its not fair that the admin see guesses from other users =p
-  config.excluded_models << 'Guess'
+#   config.excluded_models << 'Guess'
 
   config.model 'Match' do
     list do
@@ -58,9 +58,9 @@ RailsAdmin.config do |config|
     field :datetime do
       sort_reverse false
       # First order by active groups, then by match date
-      sortable "groups.active DESC, datetime"
+      sortable "tournaments.active DESC, datetime"
     end
-    field :group
+    field :tournament
     field :team_a
     field :goals_a
     field :team_b
@@ -68,13 +68,21 @@ RailsAdmin.config do |config|
   end
 
   config.model 'Team' do
-    field :id
+    field :id   	
     field :name
   end
 
-  config.model 'Group' do
+  config.model 'Tournament' do
     field :id
     field :name
+    field :active
+  end
+  
+  config.model 'Contest' do
+    field :id
+    field :tournament
+    field :name
+    field :owner
     field :active
   end
 

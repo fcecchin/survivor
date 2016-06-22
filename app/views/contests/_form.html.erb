@@ -1,0 +1,26 @@
+<%= simple_form_for(@contest) do |f| %>
+	<% if @contest.errors.any? %>
+		<div id="error_explanation">
+			<h4><%= pluralize(@contest.errors.count, "error") %>
+			prohibited this contest from being saved:</h4>
+				<ul>
+					<% @contest.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+  <%= f.association :tournament, disabled: !@contest.new_record?, collection: Tournament.actived, prompt: "Choose a tournament" %>
+  <%= f.input :name %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :active%>
+  <%#= #f.association :participants, collection: Participant.where(:contest => @contest), value_method: :id, include_blank: false %>
+  <div id="tags">
+  	<%= f.simple_fields_for :participants do |p| %>
+    	<%= render 'participant_fields', :f => p %>
+ 	<%end%>		
+	<%= link_to_add_association 'add a participant', f, :participants %>
+  </div>
+  <%= f.button :submit %>
+<% end %>
+

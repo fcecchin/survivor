@@ -4,10 +4,10 @@ class GuessesController < ApplicationController
     # get all open matches including and associates the current user guesses to it
     @grouped_matches = Match.
                           open_to_guesses.
-                          group_ordered.
+                          tournament_ordered.
                           order("datetime ASC").
                           decorate(context: {user: current_user}).
-                          group_by(&:group)
+                          group_by(&:tournament)
   end
 
   def update

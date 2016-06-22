@@ -1,6 +1,6 @@
 class GuessDecorator < Draper::Decorator
   decorates_association :match
-  decorates_association :user
+  decorates_association :participant
 
   delegate_all
 

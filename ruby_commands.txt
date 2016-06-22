@@ -1,0 +1,6 @@
+rake db:drop --> excluir o banco de dados
+rake db:schema:load --> criar o banco a partir do esquema
+rake db:seed —> carregar o banco
+bundle exec rake db:schema:dump --> criar schema.db
+
+rails generate scaffold Tournament name:string user:references description:text --no-helper --no-assets --no-rspec --no-decorator --no-jbuilder --no-view-specs --no-request-specs --no-routing-specs -p

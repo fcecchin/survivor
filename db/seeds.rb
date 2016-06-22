@@ -1,108 +1,56 @@
-
 # # rake db:seed
-User.create(email: 'fcecchin@gmail.com', password: 'senhasites', admin: true, name: 'Frantchesco C.')
+admin = User.create(email: 'fcecchin@gmail.com', password: 'senhasites', admin: true, name: 'Frantchesco C.')
+b1 = User.create(email: 'boleiro1@gmail.com', password: 'boleiro1', admin: false, name: 'Boleiro 1')
+b2 = User.create(email: 'boleiro2@gmail.com', password: 'boleiro2', admin: false, name: 'Boleiro 2')
+b3 = User.create(email: 'boleiro3@gmail.com', password: 'boleiro3', admin: false, name: 'Boleiro 3')
+b4 = User.create(email: 'boleiro4@gmail.com', password: 'boleiro4', admin: false, name: 'Boleiro 4')
+b5 =User.create(email: 'boleiro5@gmail.com', password: 'boleiro5', admin: false, name: 'Boleiro 5')
+c1 = User.create(email: 'cartola1@gmail.com', password: 'cartola1', admin: false, name: 'Cartola 1')
+c2 = User.create(email: 'cartola2@gmail.com', password: 'cartola2', admin: false, name: 'Cartola 2')
 
-# Group.create(name: 'A')
-# Group.create(name: 'B')
-# Group.create(name: 'C')
-# Group.create(name: 'D')
-# Group.create(name: 'E')
-# Group.create(name: 'F')
-# Group.create(name: 'G')
-# Group.create(name: 'H')
+# CRIAR TIMES
+ame = Team.create(name: "América-MG")
+cam = Team.create(name: "Atlético-MG")
+cap = Team.create(name: "Atlético-PR")
+bot = Team.create(name: "Botafogo")
+cha = Team.create(name: "Chapecoense")
+cor = Team.create(name: "Corinthians")
+cfc = Team.create(name: "Coritiba")
+cru = Team.create(name: "Cruzeiro")
+fig = Team.create(name: "Figueirense")
+fla = Team.create(name: "Flamengo")
+flu = Team.create(name: "Fluminense")
+gre = Team.create(name: "Grêmio")
+int = Team.create(name: "Internacional")
+pal = Team.create(name: "Palmeiras")
+pon = Team.create(name: "Ponte Preta")
+sta = Team.create(name: "Santa Cruz")
+san = Team.create(name: "Santos")
+sao = Team.create(name: "São Paulo")
+spo = Team.create(name: "Sport")
+vit = Team.create(name: "Vitória")
 
-# Team.create(name: 'Brasil')
-# Team.create(name: 'Croácia')
-# Team.create(name: 'México')
-# Team.create(name: 'Camarões')
+# CRIAR TORNEIOS
+br16 = Tournament.create(name: "Campeonato Brasileiro", year: "2016")
+cb16 = Tournament.create(name: "Copa do Brasil", year: "2016")
+nfl = Tournament.create(name: "NFL", year: "2016")
 
-# Team.create(name: 'Austrália')
-# Team.create(name: 'Chile')
-# Team.create(name: 'Espanha')
-# Team.create(name: 'Holanda')
+# CRIAR JOGOS
+Match.create(datetime: Date.today + 7, tournament: br16, team_a: int, team_b: ame, round: 7)
+Match.create(datetime: Date.today + 7, tournament: br16, team_a: pon, team_b: cha, round: 7)
+Match.create(datetime: Date.today + 7, tournament: br16, team_a: flu, team_b: gre, round: 7)
 
-# Team.create(name: 'Costa do Marfim')
-# Team.create(name: 'Grécia')
-# Team.create(name: 'Colômbia')
-# Team.create(name: 'Japão')
+r1 = Contest.create(name: "Resta Um", owner: c1, tournament: br16, active: true)
+r2 = Contest.create(name: "Resta Um - Copel", owner: admin, tournament: br16, active: true)
+cb1 = Contest.create(name: "Bolao Copa do Brasil", owner: admin, tournament: cb16)
+n1 = Contest.create(name: "Survivor NFL", owner: admin, tournament: nfl, active: true)
 
-# Team.create(name: 'Uruguai')
-# Team.create(name: 'Costa Rica')
-# Team.create(name: 'Inglaterra')
-# Team.create(name: 'Itália')
-
-# Team.create(name: 'Suíça')
-# Team.create(name: 'Equador')
-# Team.create(name: 'Honduras')
-# Team.create(name: 'França')
-
-# Team.create(name: 'Bósnia-Herzegóvina')
-# Team.create(name: 'Argentina')
-# Team.create(name: 'Nigéria')
-# Team.create(name: 'Irã')
-
-# Team.create(name: 'Alemanha')
-# Team.create(name: 'Portugal')
-# Team.create(name: 'Gana')
-# Team.create(name: 'Estados Unidos')
-
-# Team.create(name: 'Coreia do Sul')
-# Team.create(name: 'Bélgica')
-# Team.create(name: 'Rússia')
-# Team.create(name: 'Argélia')
-
-# Match.create(datetime: '2014-06-12 17:00:00', team_a: Team.find_by_name('Brasil'), team_b: Team.find_by_name('Croácia'), group: Group.find_by_name('A'))
-# Match.create(datetime: '2014-06-13 13:00:00', team_a: Team.find_by_name('México'), team_b: Team.find_by_name('Camarões'), group: Group.find_by_name('A'))
-# Match.create(datetime: '2014-06-17 16:00:00', team_a: Team.find_by_name('Brasil'), team_b: Team.find_by_name('México'), group: Group.find_by_name('A'))
-# Match.create(datetime: '2014-06-18 19:00:00', team_a: Team.find_by_name('Camarões'), team_b: Team.find_by_name('Croácia'), group: Group.find_by_name('A'))
-# Match.create(datetime: '2014-06-23 17:00:00', team_a: Team.find_by_name('Camarões'), team_b: Team.find_by_name('Brasil'), group: Group.find_by_name('A'))
-# Match.create(datetime: '2014-06-23 17:00:00', team_a: Team.find_by_name('Croácia'), team_b: Team.find_by_name('México'), group: Group.find_by_name('A'))
-
-# Match.create(datetime: '2014-06-13 16:00:00', team_a: Team.find_by_name('Espanha'), team_b: Team.find_by_name('Holanda'), group: Group.find_by_name('B'))
-# Match.create(datetime: '2014-06-13 19:00:00', team_a: Team.find_by_name('Chile'), team_b: Team.find_by_name('Austrália'), group: Group.find_by_name('B'))
-# Match.create(datetime: '2014-06-18 13:00:00', team_a: Team.find_by_name('Austrália'), team_b: Team.find_by_name('Holanda'), group: Group.find_by_name('B'))
-# Match.create(datetime: '2014-06-18 16:00:00', team_a: Team.find_by_name('Espanha'), team_b: Team.find_by_name('Chile'), group: Group.find_by_name('B'))
-# Match.create(datetime: '2014-06-23 13:00:00', team_a: Team.find_by_name('Austrália'), team_b: Team.find_by_name('Espanha'), group: Group.find_by_name('B'))
-# Match.create(datetime: '2014-06-23 13:00:00', team_a: Team.find_by_name('Holanda'), team_b: Team.find_by_name('Chile'), group: Group.find_by_name('B'))
-
-# Match.create(datetime: '2014-06-14 13:00:00', team_a: Team.find_by_name('Colômbia'), team_b: Team.find_by_name('Grécia'), group: Group.find_by_name('C'))
-# Match.create(datetime: '2014-06-14 22:00:00', team_a: Team.find_by_name('Costa do Marfim'), team_b: Team.find_by_name('Japão'), group: Group.find_by_name('C'))
-# Match.create(datetime: '2014-06-19 13:00:00', team_a: Team.find_by_name('Colômbia'), team_b: Team.find_by_name('Costa do Marfim'), group: Group.find_by_name('C'))
-# Match.create(datetime: '2014-06-19 19:00:00', team_a: Team.find_by_name('Japão'), team_b: Team.find_by_name('Grécia'), group: Group.find_by_name('C'))
-# Match.create(datetime: '2014-06-24 17:00:00', team_a: Team.find_by_name('Japão'), team_b: Team.find_by_name('Colômbia'), group: Group.find_by_name('C'))
-# Match.create(datetime: '2014-06-24 17:00:00', team_a: Team.find_by_name('Grécia'), team_b: Team.find_by_name('Costa do Marfim'), group: Group.find_by_name('C'))
-
-# Match.create(datetime: '2014-06-14 16:00:00', team_a: Team.find_by_name('Uruguai'), team_b: Team.find_by_name('Costa Rica'), group: Group.find_by_name('D'))
-# Match.create(datetime: '2014-06-14 19:00:00', team_a: Team.find_by_name('Inglaterra'), team_b: Team.find_by_name('Itália'), group: Group.find_by_name('D'))
-# Match.create(datetime: '2014-06-19 16:00:00', team_a: Team.find_by_name('Uruguai'), team_b: Team.find_by_name('Inglaterra'), group: Group.find_by_name('D'))
-# Match.create(datetime: '2014-06-20 13:00:00', team_a: Team.find_by_name('Itália'), team_b: Team.find_by_name('Costa Rica'), group: Group.find_by_name('D'))
-# Match.create(datetime: '2014-06-24 13:00:00', team_a: Team.find_by_name('Costa Rica'), team_b: Team.find_by_name('Inglaterra'), group: Group.find_by_name('D'))
-# Match.create(datetime: '2014-06-24 13:00:00', team_a: Team.find_by_name('Itália'), team_b: Team.find_by_name('Uruguai'), group: Group.find_by_name('D'))
-
-# Match.create(datetime: '2014-06-15 13:00:00', team_a: Team.find_by_name('Suíça'), team_b: Team.find_by_name('Equador'), group: Group.find_by_name('E'))
-# Match.create(datetime: '2014-06-15 16:00:00', team_a: Team.find_by_name('França'), team_b: Team.find_by_name('Honduras'), group: Group.find_by_name('E'))
-# Match.create(datetime: '2014-06-20 16:00:00', team_a: Team.find_by_name('Suíça'), team_b: Team.find_by_name('França'), group: Group.find_by_name('E'))
-# Match.create(datetime: '2014-06-20 19:00:00', team_a: Team.find_by_name('Honduras'), team_b: Team.find_by_name('Equador'), group: Group.find_by_name('E'))
-# Match.create(datetime: '2014-06-25 17:00:00', team_a: Team.find_by_name('Equador'), team_b: Team.find_by_name('Suíça'), group: Group.find_by_name('E'))
-# Match.create(datetime: '2014-06-25 17:00:00', team_a: Team.find_by_name('Honduras'), team_b: Team.find_by_name('França'), group: Group.find_by_name('E'))
-
-# Match.create(datetime: '2014-06-15 19:00:00', team_a: Team.find_by_name('Argentina'), team_b: Team.find_by_name('Bósnia-Herzegóvina'), group: Group.find_by_name('F'))
-# Match.create(datetime: '2014-06-16 16:00:00', team_a: Team.find_by_name('Irã'), team_b: Team.find_by_name('Nigéria'), group: Group.find_by_name('F'))
-# Match.create(datetime: '2014-06-21 13:00:00', team_a: Team.find_by_name('Argentina'), team_b: Team.find_by_name('Irã'), group: Group.find_by_name('F'))
-# Match.create(datetime: '2014-06-21 19:00:00', team_a: Team.find_by_name('Nigéria'), team_b: Team.find_by_name('Bósnia-Herzegóvina'), group: Group.find_by_name('F'))
-# Match.create(datetime: '2014-06-25 13:00:00', team_a: Team.find_by_name('Nigéria'), team_b: Team.find_by_name('Argentina'), group: Group.find_by_name('F'))
-# Match.create(datetime: '2014-06-25 13:00:00', team_a: Team.find_by_name('Bósnia-Herzegóvina'), team_b: Team.find_by_name('Irã'), group: Group.find_by_name('F'))
-
-# Match.create(datetime: '2014-06-16 13:00:00', team_a: Team.find_by_name('Alemanha'), team_b: Team.find_by_name('Portugal'), group: Group.find_by_name('G'))
-# Match.create(datetime: '2014-06-16 19:00:00', team_a: Team.find_by_name('Gana'), team_b: Team.find_by_name('Estados Unidos'), group: Group.find_by_name('G'))
-# Match.create(datetime: '2014-06-21 16:00:00', team_a: Team.find_by_name('Alemanha'), team_b: Team.find_by_name('Gana'), group: Group.find_by_name('G'))
-# Match.create(datetime: '2014-06-22 19:00:00', team_a: Team.find_by_name('Estados Unidos'), team_b: Team.find_by_name('Portugal'), group: Group.find_by_name('G'))
-# Match.create(datetime: '2014-06-26 13:00:00', team_a: Team.find_by_name('Portugal'), team_b: Team.find_by_name('Gana'), group: Group.find_by_name('G'))
-# Match.create(datetime: '2014-06-26 13:00:00', team_a: Team.find_by_name('Estados Unidos'), team_b: Team.find_by_name('Alemanha'), group: Group.find_by_name('G'))
-
-# Match.create(datetime: '2014-06-17 13:00:00', team_a: Team.find_by_name('Bélgica'), team_b: Team.find_by_name('Argélia'), group: Group.find_by_name('H'))
-# Match.create(datetime: '2014-06-17 19:00:00', team_a: Team.find_by_name('Rússia'), team_b: Team.find_by_name('Coreia do Sul'), group: Group.find_by_name('H'))
-# Match.create(datetime: '2014-06-22 13:00:00', team_a: Team.find_by_name('Bélgica'), team_b: Team.find_by_name('Rússia'), group: Group.find_by_name('H'))
-# Match.create(datetime: '2014-06-22 16:00:00', team_a: Team.find_by_name('Coreia do Sul'), team_b: Team.find_by_name('Argélia'), group: Group.find_by_name('H'))
-# Match.create(datetime: '2014-06-26 17:00:00', team_a: Team.find_by_name('Argélia'), team_b: Team.find_by_name('Rússia'), group: Group.find_by_name('H'))
-# Match.create(datetime: '2014-06-26 17:00:00', team_a: Team.find_by_name('Coreia do Sul'), team_b: Team.find_by_name('Bélgica'), group: Group.find_by_name('H'))
+Participant.create(user: b1, contest: r1);
+Participant.create(user: b2, contest: r1);
+Participant.create(user: admin, contest: r1);
+Participant.create(user: b1, contest: n1);
+Participant.create(user: b2, contest: n1);
+Participant.create(user: admin, contest: n1);
+Participant.create(user: b1, contest: cb1);
+Participant.create(user: b2, contest: cb1);
+Participant.create(user: b3, contest: cb1);

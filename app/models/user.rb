@@ -3,12 +3,19 @@ class User < ActiveRecord::Base
          :validatable, :omniauthable, omniauth_providers: [:facebook]
 
   validates :name, presence: true
+  validates_uniqueness_of :email
+  validates :email, :uniqueness => true, 
+                    :length => { :within => 5..50 }, 
+                    :format => { :with => /\A[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}\z/i }
 
-  has_many :guesses
+  has_many :participants
+  has_many :guesses, 	through: :participants 
+  has_many :contests,	through: :participants
+  has_many :managed_contests, :class_name => 'Contest'
 
   # guesses for matches finished or started
-  has_many :public_guesses, -> { joins(:match).where("matches.datetime <= ?", Time.now).order("matches.datetime DESC") }, 
-           class_name: 'Guess', primary_key: :id, foreign_key: :user_id
+  #has_many :public_guesses, -> { joins(:match).where("matches.datetime <= ?", Time.now).order("matches.datetime DESC") }, 
+  #         class_name: 'Guess', primary_key: :id, foreign_key: :user_id
 
   # put the users with no points (null = new user) to the end of the list
   scope :rank, -> { order('position IS NULL, position ASC') }
@@ -24,4 +31,7 @@ class User < ActiveRecord::Base
     end
   end
 
+  def to_s
+    name
+  end
 end

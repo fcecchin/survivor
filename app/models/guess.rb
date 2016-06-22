@@ -1,15 +1,15 @@
 class Guess < ActiveRecord::Base
   include Winnerable
 
-  validates :user,    presence: true
+  validates :participant,    presence: true
   validates :match,   presence: true
   validates :goals_a, presence: true
   validates :goals_b, presence: true
+  validates :match, uniqueness: { scope: :participant }
 
-  validates :match, uniqueness: { scope: :user }
-
-  belongs_to :user
+  belongs_to :participant
   belongs_to :match
+  belongs_to :team
 
   scope :finished, -> { joins(:match).where("matches.datetime < ?", Time.now + 60) }
 

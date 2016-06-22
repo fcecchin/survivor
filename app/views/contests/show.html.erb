@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @contest.name %></h1>
+<br/>
+
+<h4>Cartola</h4>
+<%= @contest.owner.name %>
+
+<h4>Boleiros</h4>
+<% @contest.users.each do |p| %>
+  <%= p.name %>
+  <br/>
+<% end %>
+
+<h4>Jogos</h4>
+<% @contest.tournament.matches.each do |m| %>
+  <%= m %>
+  <br/>
+<% end %>      
+
+<%= link_to 'Edit', edit_contest_path(@contest) if @contest.owner == current_user %>
+<%= link_to 'Back', contests_path %>
