@@ -13,11 +13,10 @@ module Bolao
 
         if g[:id].empty?
           # Create a new guess if it doesn't exist yet
-          p 'teste'
-          Guess.create(match_id: g[:match_id], goals_a: g[:goals_a], goals_b: g[:goals_b], participant: g[:participant])
+          Guess.create(match_id: g[:match_id], goals_a: g[:goals_a], goals_b: g[:goals_b], participant: participant)
         else
           # Update current guess
-          guess = Guess.find_by_id_and_participant_id(g[:id], g[:participant].id)
+          guess = Guess.find(g[:id])
           guess.update_attributes(goals_a: g[:goals_a], goals_b: g[:goals_b])
         end
       end

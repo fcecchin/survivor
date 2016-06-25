@@ -2,17 +2,21 @@ class GuessesController < ApplicationController
 
   def my_guesses
     # get all open matches including and associates the current user guesses to it
+    @contest = Contest.find(params[:id])
     @grouped_matches = Match.
                           open_to_guesses.
                           tournament_ordered.
                           order("datetime ASC").
-                          decorate(context: {user: current_user}).
+                          decorate(context: {user: current_user, contest: @contest}).
                           group_by(&:tournament)
   end
 
   def update
-    Bolao::Guesses.save(params, current_user)
+    contest = Contest.find(params[:id])
+    participant = Participant.find_by_user_id_and_contest_id(current_user.id, contest.id)
+    
+    Bolao::Guesses.save(params, participant)
     flash[:success] = t("guesses_page.guesses_saved")
-    redirect_to my_guesses_path
+    redirect_to my_guesses_path(contest)
   end
 end

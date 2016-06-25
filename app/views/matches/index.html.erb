@@ -1,0 +1,5 @@
+<h1>jogos</h1>
+<% @contest.guesses.each do |g| %>
+	<%= g %>
+<%end %>
+<%= link_to "Apostar", edit_myguesses_path(@contest) %>

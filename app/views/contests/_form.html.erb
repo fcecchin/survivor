@@ -16,9 +16,10 @@
   <%= f.input :active%>
   <%#= #f.association :participants, collection: Participant.where(:contest => @contest), value_method: :id, include_blank: false %>
   <div id="tags">
-  	<%= f.simple_fields_for :participants do |p| %>
-    	<%= render 'participant_fields', :f => p %>
- 	<%end%>		
+  	<h4>Participants</h4>
+  	<% @contest.participants.each do |p| %>
+  		<p><%= p.user %></p>
+  	<% end %>
 	<%= link_to_add_association 'add a participant', f, :participants %>
   </div>
   <%= f.button :submit %>

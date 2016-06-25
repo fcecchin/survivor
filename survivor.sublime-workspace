@@ -1,0 +1,346 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"lin",
+				"linp	link_to (nested path)"
+			],
+			[
+				"con",
+				"contest"
+			],
+			[
+				"ma",
+				"matches"
+			],
+			[
+				"p",
+				"p	Tag"
+			],
+			[
+				"eac",
+				"each"
+			],
+			[
+				"par",
+				"participants"
+			],
+			[
+				"i",
+				"id	Attr"
+			],
+			[
+				"pa",
+				"participants"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"en",
+				"encode"
+			],
+			[
+				"sel",
+				"self"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"c",
+				"class	Attr"
+			],
+			[
+				"s",
+				"style	Attr"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"last_filter": "Package ",
+		"selected_items":
+		[
+			[
+				"Package ",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/tchesco/Nitrous/survivor"
+	],
+	"file_history":
+	[
+		"/Users/tchesco/Nitrous/survivor/app/models/contest.rb",
+		"/Users/tchesco/Nitrous/survivor/app/views/matches/index.html.erb",
+		"/Users/tchesco/Nitrous/survivor/app/decorators/match_decorator.rb",
+		"/Users/tchesco/Nitrous/survivor/app/models/match.rb",
+		"/Users/tchesco/Nitrous/survivor/app/views/guesses/my_guesses.haml",
+		"/Users/tchesco/Nitrous/survivor/config/routes.rb",
+		"/Users/tchesco/Nitrous/survivor/app/controllers/guesses_controller.rb",
+		"/Users/tchesco/Library/Application Support/Sublime Text 3/Packages/Ruby Debugger/Default (OSX).sublime-keymap",
+		"/Users/tchesco/Library/Application Support/Sublime Text 3/Packages/User/Ruby Debugger.sublime-settings",
+		"/Users/tchesco/Library/Application Support/Sublime Text 3/Packages/Ruby Debugger/Ruby Debugger.sublime-settings",
+		"/Users/tchesco/Nitrous/survivor/app/controllers/matches_controller.rb",
+		"/Users/tchesco/Nitrous/survivor/db/seeds.rb",
+		"/Users/tchesco/Nitrous/survivor/app/models/guess.rb",
+		"/Users/tchesco/Nitrous/survivor/app/views/contests/edit.html.erb",
+		"/Users/tchesco/Nitrous/survivor/app/views/contests/show.html.erb",
+		"/Users/tchesco/Nitrous/survivor/app/controllers/contests_controller.rb",
+		"/Users/tchesco/Nitrous/survivor/app/views/layouts/application.haml",
+		"/Users/tchesco/Nitrous/survivor/config/application.rb",
+		"/Users/tchesco/Nitrous/survivor/app/controllers/rules_controller.rb",
+		"/Users/tchesco/Nitrous/survivor/app/models/concerns/winnerable.rb",
+		"/Users/tchesco/Nitrous/survivor/app/controllers/dashboard_controller.rb",
+		"/Users/tchesco/Nitrous/survivor/Gemfile",
+		"/Users/tchesco/Nitrous/survivor/config/environments/production.rb",
+		"/Users/tchesco/Nitrous/survivor/config/environment.rb",
+		"/Users/tchesco/Nitrous/survivor/app/views/dashboard/index.html.erb",
+		"/Users/tchesco/Nitrous/survivor/app/views/contests/_user_fields.html.haml",
+		"/Users/tchesco/Nitrous/survivor/app/assets/javascripts/contests.js",
+		"/Users/tchesco/Nitrous/survivor/app/models/participant.rb",
+		"/Users/tchesco/Nitrous/survivor/app/views/contests/_participants.html.erb",
+		"/Users/tchesco/Nitrous/survivor/app/assets/javascripts/application.js",
+		"/Users/tchesco/Nitrous/survivor/app/models/user.rb",
+		"/Users/tchesco/Nitrous/survivor/app/models/concerns/hashable_id.rb",
+		"/Users/tchesco/Nitrous/survivor/lib/assets/hashids.rb",
+		"/Users/tchesco/Nitrous/survivor/lib/assets/hashid.rb",
+		"/Users/tchesco/Nitrous/survivor/lib/rails_admin_rank_updater.rb",
+		"/Users/tchesco/Nitrous/survivor/app/views/contests/index.html.erb",
+		"/Users/tchesco/Nitrous/survivor/app/models/tournament.rb",
+		"/Users/tchesco/Nitrous/survivor/app/views/contests/_form.html.erb",
+		"/Users/tchesco/Nitrous/survivor/db/schema.rb",
+		"/Users/tchesco/Nitrous/survivor/app/views/devise/registrations/new.haml",
+		"/Users/tchesco/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"data_hora",
+			"is_today?",
+			"<%= f.simple_fields_for :participants do |p| %>\n    	\n 	<%end%>		\n 	<%= render 'participant_fields', :f => p %>",
+			"Boleiros",
+			"<\n",
+			"define_uid",
+			")\n",
+			"my_contests",
+			"comm",
+			"commm",
+			"last",
+			"thumbnail"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "survivor.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"seed",
+				"db/seeds.rb"
+			],
+			[
+				"edi",
+				"app/views/contests/edit.html.erb"
+			],
+			[
+				"show",
+				"app/views/contests/show.html.erb"
+			],
+			[
+				"appl",
+				"app/views/layouts/application.haml"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 167.0,
+		"last_filter": "mat",
+		"selected_items":
+		[
+			[
+				"mat",
+				"MatchDecorator"
+			],
+			[
+				"match",
+				"Match"
+			],
+			[
+				"gues",
+				"my_guesses"
+			],
+			[
+				"gu",
+				"Guess"
+			],
+			[
+				"co",
+				"Contest"
+			],
+			[
+				"ma",
+				"MatchesController"
+			],
+			[
+				"conte",
+				"ContestsController"
+			],
+			[
+				"apl",
+				"Application"
+			],
+			[
+				"rou",
+				"RulesController"
+			],
+			[
+				"wi",
+				"Winnerable"
+			],
+			[
+				"",
+				"DashboardController"
+			]
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -2,8 +2,7 @@
   %h2
     = t("my_guesses")
     %small= "| #{t("guesses_page.future_matches")}"
-  = form_tag my_guesses_form_path do
-    = render 'submit_right'
+  = form_tag my_guesses_form_path(@contest) do
     %table.table
       - @grouped_matches.each do |tournament, matches|
         %thead

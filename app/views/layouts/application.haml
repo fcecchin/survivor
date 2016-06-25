@@ -37,7 +37,7 @@
             %strong= t("app_title")
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
-            %li= link_to t("contests"), contests_path
+            / %li= link_to t("contests"), contests_path
             %li= link_to t("history"), my_history_path
             %li= link_to t("rules"), rules_path
           %ul.nav.navbar-nav.navbar-right
@@ -117,6 +117,7 @@
       - if Rails.env.development?
         .container
         =debug(params)
+        =debug @contest
       %footer
         %p= "&copy; ".html_safe + t("app_title")
     = javascript_include_tag "application"

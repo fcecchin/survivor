@@ -5,7 +5,7 @@ class MatchDecorator < Draper::Decorator
   delegate_all
 
   def data_hora
-    object.datetime.to_time.strftime('%d/%m/%Y %Hh')
+    object.datetime.to_time.strftime('%d/%m/%Y %Hh%M')
   end
 
   def is_today?

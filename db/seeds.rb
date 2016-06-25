@@ -36,12 +36,12 @@ cb16 = Tournament.create(name: "Copa do Brasil", year: "2016")
 nfl = Tournament.create(name: "NFL", year: "2016")
 
 # CRIAR JOGOS
-Match.create(datetime: Date.today + 7, tournament: br16, team_a: int, team_b: ame, round: 7)
-Match.create(datetime: Date.today + 7, tournament: br16, team_a: pon, team_b: cha, round: 7)
-Match.create(datetime: Date.today + 7, tournament: br16, team_a: flu, team_b: gre, round: 7)
+Match.create(datetime: DateTime.today + 7, tournament: br16, team_a: int, team_b: ame, round: 7)
+Match.create(datetime: DateTime.today + 7, tournament: br16, team_a: pon, team_b: cha, round: 7)
+Match.create(datetime: DateTime.today + 7, tournament: br16, team_a: flu, team_b: gre, round: 7)
 
-r1 = Contest.create(name: "Resta Um", owner: c1, tournament: br16, active: true)
-r2 = Contest.create(name: "Resta Um - Copel", owner: admin, tournament: br16, active: true)
+r1 = Contest.create(name: "Resta Um", owner: admin, tournament: br16, active: true)
+r2 = Contest.create(name: "Resta Um - Copel", owner: c1, tournament: br16, active: true)
 cb1 = Contest.create(name: "Bolao Copa do Brasil", owner: admin, tournament: cb16)
 n1 = Contest.create(name: "Survivor NFL", owner: admin, tournament: nfl, active: true)
 

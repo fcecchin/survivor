@@ -1,5 +1,7 @@
 require Rails.root.join('lib', 'rails_admin_rank_updater.rb')
 
+RailsAdmin.config {|c| c.label_methods << :to_s}
+
 RailsAdmin.config do |config|
 
   ### Popular gems integration

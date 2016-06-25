@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.1'
 
 gem 'rails', '4.0.6'
 gem 'therubyracer', '~> 0.12.1'
