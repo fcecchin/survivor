@@ -63,6 +63,7 @@ RailsAdmin.config do |config|
       sortable "tournaments.active DESC, datetime"
     end
     field :tournament
+    field :round
     field :team_a
     field :goals_a
     field :team_b

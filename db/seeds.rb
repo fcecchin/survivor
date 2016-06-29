@@ -36,15 +36,17 @@ cb16 = Tournament.create(name: "Copa do Brasil", year: "2016")
 nfl = Tournament.create(name: "NFL", year: "2016")
 
 # CRIAR JOGOS
-Match.create(datetime: DateTime.today + 7, tournament: br16, team_a: int, team_b: ame, round: 7)
-Match.create(datetime: DateTime.today + 7, tournament: br16, team_a: pon, team_b: cha, round: 7)
-Match.create(datetime: DateTime.today + 7, tournament: br16, team_a: flu, team_b: gre, round: 7)
+Match.create(datetime: DateTime.now + 7, tournament: br16, team_a: int, team_b: ame, round: 7)
+Match.create(datetime: DateTime.now + 7, tournament: br16, team_a: pon, team_b: cha, round: 7)
+Match.create(datetime: DateTime.now + 7, tournament: br16, team_a: flu, team_b: gre, round: 7)
 
+# CRIAR BOLOES
 r1 = Contest.create(name: "Resta Um", owner: admin, tournament: br16, active: true)
 r2 = Contest.create(name: "Resta Um - Copel", owner: c1, tournament: br16, active: true)
-cb1 = Contest.create(name: "Bolao Copa do Brasil", owner: admin, tournament: cb16)
+cb1 = Contest.create(name: "Bolao Copa do Brasil", owner: admin, tournament: cb16, active: true)
 n1 = Contest.create(name: "Survivor NFL", owner: admin, tournament: nfl, active: true)
 
+# RELACIONAR PARTICIPANTES
 Participant.create(user: b1, contest: r1);
 Participant.create(user: b2, contest: r1);
 Participant.create(user: admin, contest: r1);

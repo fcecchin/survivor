@@ -8,13 +8,16 @@ Bolao::Application.routes.draw do
   
   #resources :contests, path_names: { new: 'new/:id' }
   
-  get  'contests/:id',          to: 'contests#show',        as: :contest
+  get  'contest/:id',          to: 'contests#show',        as: :contest
   get  'contests/new/:id',      to: 'contests#new',         as: :new_contest
-  get  'contests/:id/edit',     to: 'contests#edit',        as: :edit_contest
+  get  'contest/:id/edit',     to: 'contests#edit',        as: :edit_contest
+
+  get  'contest/:contest_id/guesses/',          to: 'guesses#my',           as: :my_guesses
+  get  'contest/:contest_id/match/:id',         to: 'matches#show',         as: :match_details1
 
   get  'matches/:id',           to: 'matches#index',        as: :contest_matches
   
-  get  '/palpites/:id',         to: 'guesses#my_guesses',   as: :my_guesses
+  get  '/palpites/:id',         to: 'guesses#my_guesses',   as: :my_palpites
   post '/palpites/:id',         to: 'guesses#update',       as: :my_guesses_form
 
   get  '/meu-historico',  to: 'users#history',      as: :my_history

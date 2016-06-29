@@ -1,0 +1,25 @@
+<h1>Minhas apostas</h1>
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_tag my_guesses_form_path(@contest) do %>
+			<% @matches_by_round.each do |round, matches| %>
+				<div>
+					<%= "Rodada #{round}" %>
+				</div>
+				<% matches.each do |m| %>
+					<%= hidden_field_tag "guesses[][id]", m.my_guess.try(:id) %>
+          			<%= hidden_field_tag "guesses[][match_id]", m.id %>
+					<div>
+						<%= m.team_a.name %>
+						 <%= number_field_tag 'guesses[][goals_a]', m.my_guess.try(:goals_a), class: 'form-control', disabled: !m.is_open_to_guesses? %>
+						 x
+						 <%= number_field_tag 'guesses[][goals_b]', m.my_guess.try(:goals_b), class: 'form-control', disabled: !m.is_open_to_guesses? %>
+						<%= m.team_b.name %>
+						<%= link_to "ver apostas", match_details1_path(@contest, m) %>
+					</div>
+				<% end %>
+			<% end %>
+			<%= submit_tag "Salvar apostas", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

@@ -1,7 +1,8 @@
 class MatchesController < ApplicationController
 
   def show
-    @match = Match.find(params[:id]).decorate
+  	@contest = Contest.find(params[:id])
+    @match = Match.find(params[:id]).decorate(context: {user: current_user, contest: @contest})
   end
 
   def index

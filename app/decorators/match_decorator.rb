@@ -25,8 +25,12 @@ class MatchDecorator < Draper::Decorator
     scorers.take(6)
   end
 
+  def participant
+    Participant.find_by_user_id_and_contest_id(context[:user].id, context[:contest].id)
+  end
+
   def my_guess
-    Guess.find_by_match_id_and_participant_id(self.id, Participant.find_by_user_id_and_contest_id(context[:user].id, context[:contest].id))
+    Guess.find_by_match_id_and_participant_id(self.id, participant)
   end
 
   def status_classes
@@ -41,7 +45,7 @@ class MatchDecorator < Draper::Decorator
   end
 
   def guesses_max
-    User.count
+    Participant.where("contest_id = ?", context[:contest].id).count
   end
 
   def guesses_progress

@@ -62,7 +62,8 @@
     .container
       .row
         .col-lg-9
-          = bootstrap_flash
+          / = bootstrap_flash
+          = flash[:success]
           = yield
         .col-lg-3
           / .box-rounded
@@ -112,12 +113,16 @@
                       %td.center= match.goals_b
                       %td.center
                         %img.img-circle.tooltip-img{src: match.team_b.flag, width: 30, "data-toggle" => "tooltip", "data-placement" => "top", title: match.team_b.name}
-              %a.btn.btn-default{href: my_guesses_path}= t("take_a_guess")
+              %a.btn.btn-default{href: my_guesses_path(1)}= t("take_a_guess")
       .row
-      - if Rails.env.development?
-        .container
-        =debug(params)
-        =debug @contest
       %footer
         %p= "&copy; ".html_safe + t("app_title")
+
+      - if Rails.env.development?
+        .container
+        %br
+        %br
+        %hr
+        =debug(params)
+        =debug @contest
     = javascript_include_tag "application"
